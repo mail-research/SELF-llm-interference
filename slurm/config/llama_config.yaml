@@ -1,0 +1,18 @@
+
+model: meta-llama/Llama-3.1-8B
+enable_prefix_caching: true
+dtype: bfloat16
+gpu_memory_utilization: 0.85
+swap_space: 128
+host: 0.0.0.0
+disable_mm_preprocessor_cache: true
+disable_custom_all-reduce: true
+max_num_batched_tokens: 20480
+max_num_seqs: 2048
+max_model_len: 20480
+enable_chunked_prefill: true
+enforce_eager: false
+port: 8000
+uvicorn-log-level: "info"
+data_parallel_size: 4
+tensor_parallel_size: 1
