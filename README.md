@@ -20,4 +20,12 @@ python scripts/data/aime25.py
 ```
 ### Training Scripts
 
-We provide training scripts for both single-node and multi-node setups in `slurm/deepscaler`.
+We provide training scripts for both single-node setup in `slurm`.
+For GRPO Training:
+```python
+bash slurm train_grpo.sh
+```
+For SELF Training:
+```python
+bash slurm train_grpo.sh
+```
