@@ -3,13 +3,14 @@
 **Abstract**: *Reinforcement Learning with Verifiable Rewards (RLVR) has emerged as a key method for improving Large Language Models' reasoning capabilities, yet recent evidence suggests it may paradoxically shrink the reasoning boundary rather than expand it. This paper investigates this shrinkage issue of RLVR by analyzing its learning dynamics and reveals two critical phenomena that explain this failure. First, we expose the negative interference phenomenon in RLVR, where learning to solve certain training problems actively reduces the likelihood of correct solutions for others, leading to the decline of Pass@$k$ performance or the probability of generating a correct solution within $k$ attempts. Second, we uncover the winner-take-all effect: RLVR disproportionately reinforces problems with high likelihood under the base model while suppressing initially low-likelihood, correct solutions. Through extensive theoretical and empirical analysis on multiple mathematical reasoning benchmarks, we show that this effect arises from the inherent on-policy sampling in standard RL objectives, causing the model to converge toward narrow solution strategies. Based on these insights, we propose a simple yet effective data curation algorithm that focuses RLVR learning on low-likelihood problems, achieving notable improvement in Pass@$k$ performance.*
 
 ### Highlights
-* RLVR reduces the set of problems the model can solve, compared to the base model (decreased Pass@$k$)
+* RLVR reduces the set of problems the model can solve, compared to the base model (decreased Pass@$k$) -- **the coverage shrinkage problem**.
 * This is due to:
-  * Negative Interference: learning to solve some problems in a training batch reduces the likelihood of generating correct solutions for others outside of that training batch
-  * On-policy learning tends to reinforce problems highly solvable under the base model while neglecting problems with initially low likelihood of correct solutions. Negative interference makes this worse, leading to winner-take-all situation.
+  * **Negative Interference** -- learning to solve some problems in a training batch reduces the likelihood of generating correct solutions for others outside of that training batch
+  * **On-policy Learning**, which tends to reinforce problems highly solvable under the base model while neglecting problems with initially low likelihood of correct solutions. Negative interference makes this worse, leading to **winner-take-all** situation.
 * SELF mitigates this coverage shrinkage by learning to solve only problems with low likelihood of generating correct solutions.
-* SELF significantly improves over GRPO as $k$ increases, and as the size of the model grows. 
-![alt text](figures/main-results.png)
+* SELF **significantly improves over GRPO** as $k$ increases, and as the size of the model grows (see below, more in the paper). 
+    
+    ![alt text](figures/main-results.png)
 
 ### Installation
 ```bash
