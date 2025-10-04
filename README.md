@@ -52,9 +52,10 @@ bash slurm/eval.sh
 Please cite the following work when using this repository:
 
 ```
-@inproceedings{nguyen2025self,
+@article{nguyen2025self,
   title={The Reasoning Boundary Paradox: How Reinforcement Learning Constrains Language Models},
-  author={Nguyen, Phuc M and La, Chinh D and Nguye, Duy MH and Chawla, Nitesh V and Nguyen, Binh Nguyen and Doan, Khoa D}
+  author={Nguyen, Phuc M and La, Chinh D and Nguyen, Duy MH and Chawla, Nitesh V and Nguyen, Binh T.Nguyen and Doan, Khoa D}
+  journal={arXiv preprint arXiv:2510.02230}
   year={2025}
 }
 ```
